@@ -49,7 +49,7 @@ const questions = [
         type: "checkbox",
         name: "license",
         message: "Select a license to use for your project.",
-        choices: ["MIT", "License2"],
+        choices: ["MIT License", "Mozilla Public License"],
     },
 ];
 
@@ -68,7 +68,7 @@ function init() {
 
     inquirer.prompt(questions).then((response) => {
         writeToFile(`# ${response.title}\n\n`);
-        if (response.license == 'MIT') {
+        if (response.license == 'MIT License') {
             writeToFile(`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n`);
         }
         if (response.license == 'Mozilla Public License') {
@@ -80,7 +80,8 @@ function init() {
         writeToFile(`## Usage\n\n${response.usage}\n\n`);
         writeToFile(`## Contributing\n\n${response.contributing}\n\n`);
         writeToFile(`## Tests\n\n${response.tests}\n\n`);
-        writeToFile(`## Questions\n\nFor questions, reach me via GitHub or by email.\n\nGithub: ${response.github}\nEmail: ${response.email}`);
+        writeToFile(`## Questions\n\nFor questions, reach me via GitHub or by email.\n\nGithub: ${response.github}\nEmail: ${response.email}\n\n`);
+        writeToFile(`## License\n\nThis application is covered under the ${response.license}`);
     }
     )}
 

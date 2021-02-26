@@ -69,7 +69,7 @@ function init() {
     inquirer.prompt(questions).then((response) => {
         writeToFile(`# ${response.title}\n\n`);
         writeToFile(`## Description\n\n${response.description}\n\n`);
-        writeToFile(`## Table of Contents\n\n - [Installation](installation)\n - [Usage](#usage)\n - [Contributing](contributing)\n - [Tests](tests)\n - [Questions](questions)\n\n`);
+        writeToFile(`## Table of Contents\n\n - [Installation](#installation)\n - [Usage](#usage)\n - [Contributing](#contributing)\n - [Tests](#tests)\n - [Questions](#questions)\n\n`);
         writeToFile(`## Installation\n\n${response.installation}\n\n`);
         writeToFile(`## Usage\n\n${response.usage}\n\n`);
         writeToFile(`## Contributing\n\n${response.contributing}\n\n`);

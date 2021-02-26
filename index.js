@@ -81,7 +81,7 @@ function init() {
         writeToFile(`## Contributing\n\n${response.contributing}\n\n`);
         writeToFile(`## Tests\n\n${response.tests}\n\n`);
         writeToFile(`## Questions\n\nFor questions, reach me via GitHub or by email.\n\nGithub: ${response.github}\nEmail: ${response.email}\n\n`);
-        writeToFile(`## License\n\nThis application is covered under the ${response.license}`);
+        writeToFile(`## License\n\nThis application is covered under the ${response.license}.`);
     }
     )}
 

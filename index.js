@@ -75,7 +75,7 @@ function init() {
             writeToFile(`[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`);
         }
         writeToFile(`## Description\n\n${response.description}\n\n`);
-        writeToFile(`## Table of Contents\n\n - [Installation](#installation)\n - [Usage](#usage)\n - [Contributing](#contributing)\n - [Tests](#tests)\n - [Questions](#questions)\n\n`);
+        writeToFile(`## Table of Contents\n\n - [Installation](#installation)\n - [Usage](#usage)\n - [Contributing](#contributing)\n - [Tests](#tests)\n - [Questions](#questions)\n\n - [License](#license)\n\n`);
         writeToFile(`## Installation\n\n${response.installation}\n\n`);
         writeToFile(`## Usage\n\n${response.usage}\n\n`);
         writeToFile(`## Contributing\n\n${response.contributing}\n\n`);

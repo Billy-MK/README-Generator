@@ -9,6 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^6.3.1"
-  }
+    "fs": "0.0.1-security",
+    "inquirer": "^6.5.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Billy-MK/README-Generator.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Billy-MK/README-Generator/issues"
+  },
+  "homepage": "https://github.com/Billy-MK/README-Generator#readme"
 }

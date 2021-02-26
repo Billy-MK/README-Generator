@@ -28,7 +28,7 @@ const questions = [
     {
         type: "input",
         name: "contributing",
-        message: "Provide details about how other developers can contribute to your porject.",
+        message: "Provide details about how other developers can contribute to your project.",
     },
     {
         type: "input",
@@ -49,7 +49,7 @@ const questions = [
         type: "checkbox",
         name: "license",
         message: "Select a license to use for your project.",
-        choices: ["License1", "License2"],
+        choices: ["MIT", "License2"],
     },
 ];
 
@@ -68,13 +68,19 @@ function init() {
 
     inquirer.prompt(questions).then((response) => {
         writeToFile(`# ${response.title}\n\n`);
+        if (response.license == 'MIT') {
+            writeToFile(`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n`);
+        }
+        if (response.license == 'Mozilla Public License') {
+            writeToFile(`[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`);
+        }
         writeToFile(`## Description\n\n${response.description}\n\n`);
         writeToFile(`## Table of Contents\n\n - [Installation](#installation)\n - [Usage](#usage)\n - [Contributing](#contributing)\n - [Tests](#tests)\n - [Questions](#questions)\n\n`);
         writeToFile(`## Installation\n\n${response.installation}\n\n`);
         writeToFile(`## Usage\n\n${response.usage}\n\n`);
         writeToFile(`## Contributing\n\n${response.contributing}\n\n`);
         writeToFile(`## Tests\n\n${response.tests}\n\n`);
-        writeToFile(`## Questions\n\nFor questions, reach me via GitHub or by email.\n\nGithub: ${response.github}\nEmail: ${email}`);
+        writeToFile(`## Questions\n\nFor questions, reach me via GitHub or by email.\n\nGithub: ${response.github}\nEmail: ${response.email}`);
     }
     )}
 

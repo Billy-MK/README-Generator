@@ -37,8 +37,13 @@ const questions = [
     },
     {
         type: "input",
-        name: "questions",
-        message: "Put any questions about the project you may have here.",
+        name: "github",
+        message: "Enter your GitHub username.",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Enter your email address.",
     },
     {
         type: "checkbox",
@@ -69,7 +74,7 @@ function init() {
         writeToFile(`## Usage\n\n${response.usage}\n\n`);
         writeToFile(`## Contributing\n\n${response.contributing}\n\n`);
         writeToFile(`## Tests\n\n${response.tests}\n\n`);
-        writeToFile(`## Questions\n\n${response.questions}\n\n`);
+        writeToFile(`## Questions\n\nFor questions, reach me via GitHub or by email.\n\nGithub: ${response.github}\nEmail: ${email}`);
     }
     )}
 

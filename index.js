@@ -49,23 +49,27 @@ const questions = [
 ];
 
 
-// TODO: Create a function to write README file
+// Writes to the README file
 function writeToFile(data) {
-    fs.appendFile("README.md", `${data}\n`, (err) =>
+    fs.appendFile("README.md", data, (err) =>
         err ? console.error(err) : null
         );
     }
 
-// TODO: Create a function to initialize app
+// Initialization function which runs the program
 function init() {
+    fs.writeFile('README.md', "", (err) =>
+    err ? console.error(err) : null);
+
     inquirer.prompt(questions).then((response) => {
-        writeToFile(response.title);
-        writeToFile(response.description);
-        writeToFile(response.installation);
-        writeToFile(response.usage);
-        writeToFile(response.contributing);
-        writeToFile(response.tests);
-        writeToFile(response.questions);
+        writeToFile(`# ${response.title}\n\n`);
+        writeToFile(`## Description\n\n${response.description}\n\n`);
+        writeToFile(`## Table of Contents\n\n - [Installation](installation)\n - [Usage](#usage)\n - [Contributing](contributing)\n - [Tests](tests)\n - [Questions](questions)\n\n`);
+        writeToFile(`## Installation\n\n${response.installation}\n\n`);
+        writeToFile(`## Usage\n\n${response.usage}\n\n`);
+        writeToFile(`## Contributing\n\n${response.contributing}\n\n`);
+        writeToFile(`## Tests\n\n${response.tests}\n\n`);
+        writeToFile(`## Questions\n\n${response.questions}\n\n`);
     }
     )}
 
